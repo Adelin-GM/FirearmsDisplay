@@ -9,6 +9,7 @@
     export let container: HTMLDivElement;
     export let lightColor: string = "#ffffff";
     export let zoom: number = 30;
+    export let disableDrag: boolean = false;
 
     let gunY = position[1];
     let rotation = 0;
@@ -18,6 +19,7 @@
     let lastX = 0;
 
     function onPointerDown(event: PointerEvent) {
+        if(disableDrag) return;
         dragging = true;
         lastX = event.clientX;
     }
@@ -48,7 +50,6 @@
         };
     });
 
-    // Spooky floating ghost 👻
     function levitate() {
         const time = Date.now() / 1000;
         const speed = 1;
@@ -77,7 +78,7 @@
 <!-- Main light --- position x, y, z -->
 <T.RectAreaLight intensity={20} position={lightDirection} color={lightColor}/>
 
-<!-- Ghost -->
+
 {#await useGltf(gltfPath) then pistol}
     <T
         is={pistol.scene}
