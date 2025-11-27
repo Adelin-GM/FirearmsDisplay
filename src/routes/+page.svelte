@@ -1,6 +1,8 @@
 <script lang="ts">
     import Dmodel from "../components/DModel.svelte";
 
+    import DragunovModel from "$lib/3D/DragunovSniper.glb";
+    import Revolver from "$lib/3D/pistol.glb";
 
 const imgSrc = 'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=80&w=450&h=190&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D';
 
@@ -10,7 +12,7 @@ const imgSrc = 'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=8
     <div class="card preset-filled-surface-100-900 border-[1px] border-surface-200-800 card-hover divide-surface-200-800 block max-w-md divide-y overflow-hidden">
         <header>
             <div class="card-header">
-                <Dmodel gltfPath={"src/lib/assets/3D/DragunovSniper.glb"} zoom={9}/>
+                <Dmodel gltfPath={DragunovModel} zoom={9}/>
             </div>
         </header>
         <article class="space-y-4 p-4">
@@ -32,7 +34,7 @@ const imgSrc = 'https://images.unsplash.com/photo-1463171515643-952cee54d42a?q=8
         <header>
             <div class="card-header">
                 <div>
-                    <Dmodel gltfPath={"src/lib/assets/3D/pistol-black.glb"} zoom={9}/>
+                    <Dmodel gltfPath={Revolver} zoom={9}/>
                 </div>
             </div>
         </header>
